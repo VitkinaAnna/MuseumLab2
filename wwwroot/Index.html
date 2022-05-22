@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Музей</title>
+    <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+    <h1>2022</h1>
+    <h3>Додайте виставку</h3>
+    <form action="javascript:void(0);" method="POST" onsubmit="addExhibition()">
+        <input type="text" id="add-name" placeholder="Нова виставка">
+        <input type="text" id="add-price" placeholder="Нова ціна">
+        <input type="text" id="add-information" placeholder="Інформація про виставку">
+        <input type="submit" value="Додати">
+    </form>
+
+    <div id="editDinosaur">
+        <h3>Змінити</h3>
+        <form action="javascript:void(0);" onsubmit="updateExhibition()">
+            <input type="hidden" id="edit-id">
+            <input type="text" id="edit-name">
+            <input type="text" id="edit-price">
+            <input type="text" id="edit-information">
+            <input type="submit" value="Зберегти">
+            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+
+    <p id="counter"></p>
+
+    <table>
+        <tr>
+            <th>Назва виставки</th>
+            <th>Ціна виставки</th>
+            <th>Опис виставки</th>
+        </tr>
+        <tbody id="exhibitions"></tbody>
+    </table>
+
+    <script src="js/exhibition.js" asp-append-version="true"></script>
+    <script type="text/javascript">
+        getExhibbition();
+    </script>
+</body>
+</html>
